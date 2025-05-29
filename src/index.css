@@ -25,6 +25,17 @@ body {
   min-height: 100vh;
 }
 
+/* 모바일 안전 영역 지원 */
+@supports (padding: max(0px)) {
+  .safe-area-inset-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .h-safe-area-inset-bottom {
+    height: env(safe-area-inset-bottom);
+  }
+}
+
 /* 스크롤바 스타일링 */
 ::-webkit-scrollbar {
   width: 8px;
@@ -79,4 +90,47 @@ input:focus,
 textarea:focus {
   outline: 2px solid #5D9C9C;
   outline-offset: 2px;
+}
+
+/* 플로팅 네비게이션 애니메이션 */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.floating-nav-enter {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* 스와이프 표시기 애니메이션 */
+@keyframes swipeIndicator {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.swipe-indicator {
+  animation: swipeIndicator 0.3s ease-out;
+}
+
+/* 터치 디바이스에서 호버 효과 비활성화 */
+@media (hover: none) and (pointer: coarse) {
+  button:hover {
+    background-color: initial;
+  }
 } 

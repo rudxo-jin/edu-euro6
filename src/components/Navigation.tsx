@@ -25,41 +25,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      {/* 모바일 드롭다운 메뉴 (768px 미만) */}
-      <div className="md:hidden">
-        <div className="container mx-auto px-4">
-          <button
-            className="w-full flex items-center justify-between py-4 text-left"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          >
-            <span className="font-medium text-teal-600">
-              📚 {activeTabData?.label || '모듈 선택'}
-            </span>
-            <span className={`transform transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}>
-              ▼
-            </span>
-          </button>
-          
-          {isDropdownOpen && (
-            <div className="absolute left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`w-full px-4 py-3 text-left hover:bg-gray-50 border-b border-gray-100 last:border-b-0 ${
-                    activeTab === tab.id ? 'bg-teal-50 text-teal-600 font-medium' : ''
-                  }`}
-                  onClick={() => handleTabChange(tab.id)}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* 태블릿/데스크톱 탭 메뉴 (768px 이상) */}
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-40">
+      {/* 모바일에서는 숨김 - 플로팅 네비게이션 사용 */}
       <div className="hidden md:block">
         <div className="container mx-auto px-4">
           <div className="flex overflow-x-auto scrollbar-hide">
