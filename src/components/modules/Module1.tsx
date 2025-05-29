@@ -46,7 +46,9 @@ const Module1: React.FC<Module1Props> = ({ onNavigate: _onNavigate }) => {
         </p>
         
         <h4 className="font-semibold mt-4 mb-2">A2 엔진 주요 제원 (요약):</h4>
-        <div className="overflow-x-auto">
+        
+        {/* 데스크톱 테이블 (768px 이상) */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300 mt-4">
             <thead>
               <tr className="bg-gray-100">
@@ -82,6 +84,34 @@ const Module1: React.FC<Module1Props> = ({ onNavigate: _onNavigate }) => {
             </tbody>
           </table>
         </div>
+
+        {/* 모바일 카드 형태 (768px 미만) */}
+        <div className="md:hidden mt-4 space-y-3">
+          <div className="bg-gray-50 p-4 rounded-lg border">
+            <div className="font-semibold text-gray-700 mb-1">형식</div>
+            <div className="text-gray-900">A2 (D4CB 유로6)</div>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg border">
+            <div className="font-semibold text-gray-700 mb-1">배기량</div>
+            <div className="text-gray-900">2,497 cc</div>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg border">
+            <div className="font-semibold text-gray-700 mb-1">최고 출력</div>
+            <div className="text-gray-900">133 PS / 3,600 rpm</div>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg border">
+            <div className="font-semibold text-gray-700 mb-1">최대 토크</div>
+            <div className="text-gray-900">26.5 kg·m / 1,250~3,500 rpm</div>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg border">
+            <div className="font-semibold text-gray-700 mb-1">연료분사방식</div>
+            <div className="text-gray-900">커먼레일 직접분사 (CRDi)</div>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg border">
+            <div className="font-semibold text-gray-700 mb-1">과급방식</div>
+            <div className="text-gray-900">WGT 또는 eVGT</div>
+          </div>
+        </div>
         
         <p className="mt-4 text-sm text-gray-700">
           롱 스트로크 설계로 저회전 토크가 우수하여 상용차 특성에 적합합니다. 
@@ -95,7 +125,9 @@ const Module1: React.FC<Module1Props> = ({ onNavigate: _onNavigate }) => {
         </p>
         
         <h4 className="font-semibold mt-4 mb-2">주요 변경점 (유로6-C 대비 유로6-D):</h4>
-        <div className="overflow-x-auto">
+        
+        {/* 데스크톱 테이블 (768px 이상) */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300 mt-4">
             <thead>
               <tr className="bg-gray-100">
@@ -126,6 +158,63 @@ const Module1: React.FC<Module1Props> = ({ onNavigate: _onNavigate }) => {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* 모바일 카드 형태 (768px 미만) */}
+        <div className="md:hidden mt-4 space-y-4">
+          <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+            <div className="font-bold text-blue-800 mb-3">콜드스타트 검사</div>
+            <div className="space-y-2">
+              <div>
+                <span className="font-semibold text-gray-700">유로6-C:</span>
+                <span className="ml-2 text-gray-900">미적용 또는 완화</span>
+              </div>
+              <div>
+                <span className="font-semibold text-gray-700">유로6-D:</span>
+                <span className="ml-2 text-gray-900">추가 및 강화</span>
+              </div>
+              <div className="mt-3 p-3 bg-yellow-50 rounded border border-yellow-200">
+                <span className="font-semibold text-yellow-800">정비 포인트:</span>
+                <div className="text-yellow-900 text-sm mt-1">저온 시동성, 예열 플러그, 초기 후처리장치 활성화 중요</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+            <div className="font-bold text-green-800 mb-3">배출가스 측정 시점</div>
+            <div className="space-y-2">
+              <div>
+                <span className="font-semibold text-gray-700">유로6-C:</span>
+                <span className="ml-2 text-gray-900">엔진 유효출력 20% 초과</span>
+              </div>
+              <div>
+                <span className="font-semibold text-gray-700">유로6-D:</span>
+                <span className="ml-2 text-gray-900">엔진 유효출력 10% 초과</span>
+              </div>
+              <div className="mt-3 p-3 bg-yellow-50 rounded border border-yellow-200">
+                <span className="font-semibold text-yellow-800">정비 포인트:</span>
+                <div className="text-yellow-900 text-sm mt-1">저속/저부하 관리 강화, DPF/SCR 작동 영향</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+            <div className="font-bold text-purple-800 mb-3">RDE 적재 중량</div>
+            <div className="space-y-2">
+              <div>
+                <span className="font-semibold text-gray-700">유로6-C:</span>
+                <span className="ml-2 text-gray-900">최대 적재 50%</span>
+              </div>
+              <div>
+                <span className="font-semibold text-gray-700">유로6-D:</span>
+                <span className="ml-2 text-gray-900">최대 적재 10%~100%</span>
+              </div>
+              <div className="mt-3 p-3 bg-yellow-50 rounded border border-yellow-200">
+                <span className="font-semibold text-yellow-800">정비 포인트:</span>
+                <div className="text-yellow-900 text-sm mt-1">다양한 조건에서의 배출가스 대응 능력 요구</div>
+              </div>
+            </div>
+          </div>
         </div>
         
         <h4 className="font-semibold mt-4 mb-2">정비 시 유의사항:</h4>

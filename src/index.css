@@ -43,6 +43,16 @@ body {
   background: #a8a8a8;
 }
 
+/* 스크롤바 숨김 유틸리티 */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
 /* 테이블 기본 스타일 */
 table {
   border-collapse: collapse;
