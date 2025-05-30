@@ -8,7 +8,7 @@ const Header: React.FC = () => {
           🚛 포터2/봉고3 유로6 디젤 엔진 정비 교육
         </h1>
         <p className="text-teal-100 text-sm md:text-base">
-          전문 정비사를 위한 체계적인 학습 과정 • 🔥 실시간 자동 배포 확인! 🔥
+          전문 정비사를 위한 체계적인 학습 과정 • ⚡ 배포 문제 해결 테스트 ⚡
         </p>
       </div>
     </header>
