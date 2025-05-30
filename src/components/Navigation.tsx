@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface NavigationProps {
   activeTab: string;
@@ -6,8 +6,6 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
   const tabs = [
     { id: 'module1', label: '모듈 1: 개요', shortLabel: '개요' },
     { id: 'module2', label: '모듈 2: 고장 진단', shortLabel: '진단' },
@@ -16,13 +14,6 @@ const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
     { id: 'module5', label: '모듈 5: 연료 시스템', shortLabel: '연료' },
     { id: 'module6', label: '모듈 6: 과급 시스템', shortLabel: '과급' },
   ];
-
-  const activeTabData = tabs.find(tab => tab.id === activeTab);
-
-  const handleTabChange = (tabId: string) => {
-    onTabChange(tabId);
-    setIsDropdownOpen(false);
-  };
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-40">
